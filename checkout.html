@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Creating a website for ordering pizza">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Assignment 2| Pizza shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300
+    ;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,
+    900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,
+    700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/checkout_file.css">
+</head>
+<body>
+<header>
+    <!-- this code was tricky cause when you said, display the variables to the user, i knew it was going to be tough -->
+    <div>
+        <a href="index.html"><img src="./img/logo_1.jpg" alt="header logo"></a>
+    </div>
+    <nav>
+        <menu>
+            <li><a href="index.html">HOME</a></li>
+        </menu>
+    </nav>
+</header>
+    <main>
+        <section>
+            <div>
+                    <fieldset>
+                        <legend>CUSTOMER'S INFO AND ORDER🍕</legend>
+                        <div>First name: <span id="name"></span></div><br>
+                        <div>Last  name: <span id="last-name"></span></div><br>
+                        <div>Phone number: <span id="telphone"></span></div><br>
+                        <div>Email Address: <span id="email"></span></div><br>
+                        <div>Quantity: <span id="quantity"></span></div><br>
+                        <div>Service Method: <span id="service-method"></span></div><br>
+                        <div>Address: <span id="address"></span></div>
+                        <p>If you would like to edit some details, click here
+                            <a href="index_1.html">
+                                <button class="btn">Edit</button></a></p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </fieldset>
+                <!-- i dont know most of these scripts, i referred online/YouTube-->
+                <script>
+                    const firstName = localStorage.getItem('first-name');
+                    const lastName = localStorage.getItem('last-name');
+                    const telephone = localStorage.getItem('telephone');
+                    const email = localStorage.getItem('email');
+                    const quantity = localStorage.getItem('quantity');
+                    const method =localStorage.getItem('service-method');
+                    const address = localStorage.getItem('address');
+
+                    document.getElementById('name').textContent = firstName;
+                    document.getElementById('last-name').textContent = lastName;
+                    document.getElementById('telphone').textContent = telephone;
+                    document.getElementById('email').textContent = email;
+                    document.getElementById('quantity').textContent = quantity;
+                    document.getElementById('service-method').textContent = method;
+                    document.getElementById('address').textContent = address;
+
+                </script>
+            </div>
+        </section>
+    </main>
+<footer>
+    <div>
+        <a href="index.html"><img src="./img/logo_1.jpg" alt="footer logo"></a>
+    </div>
+    <div>
+        <nav>
+            <menu>
+                <li><a href="about.html"><h6>ABOUT US</h6></a></li>
+                <li><a href="html_file.html"><h6>PRIVACY</h6></a></li>
+                <li><a href="html_file.html"><h6>EMAIL OFFERS</h6></a></li>
+                <li><a href="html_file.html"><h6>CONTACT US</h6></a></li>
+                <li><a href="html_file.html"><h6>JOIN OUR TEAM</h6></a></li>
+                <li><a href="html_file.html"><h6>TERMS AND CONDITION</h6></a></li>
+                <li><a href="html_file.html"><h6>GET ANSWERS</h6></a></li>
+            </menu>
+        </nav>
+    </div>
+</footer>
+</body>
+</html>

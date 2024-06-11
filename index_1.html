@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Creating a website for ordering pizza">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Assignment 2| Pizza shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300
+    ;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,
+    900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,
+    700;1,900&display=swap" rel="stylesheet">
+    <!-- add our CSS -->
+    <link rel="stylesheet" href="./CSS/style1_assignment.css">
+<!-- this script is for the checkboxes -->
+    <!-- I had 10 checkboxes which are the toppings, no one is ordering a pizza with 10 toppings -->
+    <!-- so I looked it up online to get the max amount of checkboxes one can tick -->
+<script>
+    window.addEventListener('DOMContentLoaded', function(){
+        var checkboxes=document.querySelectorAll('input[type="checkbox"]')
+        var maxAllowed=5;
+
+        checkboxes.forEach(function (checkbox){
+            checkbox.addEventListener('change',function(){
+                var checkedCount=document.querySelectorAll('input[type="checkbox"]:checked').length;
+                if(checkedCount>maxAllowed){
+                    this.checked=false;
+                }
+                if(checkedCount==maxAllowed){
+                    checkboxes.forEach(function(otherCheckbox){
+                        if(!otherCheckbox.checked){
+                            otherCheckbox.disabled=true;
+                        }
+                    });
+                    updateLable("Maximum Selected Toppings Reached");
+                }
+                else{
+                    checkboxes.forEach(function (otherCheckbox){
+                        otherCheckbox.disabled=false;
+                    });
+                    updateLable("");
+                }
+            });
+        });
+        function updateLable(message){
+            var label=document.getElementById('messageLabel');
+            label.textContent=message;
+        }
+    });
+</script>
+</head>
+<body>
+<header>
+    <div>
+        <a href="index.html"><img src="./img/logo_1.jpg" alt="header logo"></a>
+    </div>
+    <nav>
+        <menu>
+            <li><a href="index.html">HOME</a></li>
+        </menu>
+    </nav>
+</header>
+<!-- used a flex again-->
+<div class="flex-conent-container">
+    <main>
+        <section>
+            <div>
+                <form id="form">
+                    <fieldset>
+                        <!-- added this legend feature I saw online, really makes the form look good -->
+                        <legend>CHECKOUT🍕</legend>
+
+                        <label for="name">First Name:</label>
+                        <input type="text" id="name" placeholder="Enter your First-Name" required>
+                        <br>
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" placeholder="Enter your Last-Name" required>
+                        <br>
+                        <label for="telphone">Phone Number:</label>
+                        <input type="tel" id="telphone" placeholder="Enter your Phone Number" required>
+                        <br>
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" placeholder="Email-Address" required>
+                        <br>
+                        <label for="quantity">Quantity of Pizza(s):</label>
+                        <input type="number" id="quantity" min="0" max="20" value="1">
+                        <br>
+                        <div class="radio">
+                            <label for="pizza size" id="pizza-size">Pizza Size:</label>
+
+                            Small<input type="radio" id="small" value="small" name="pizza size">
+
+                            Medium<input type="radio" id="medium" value="medium" name="pizza size">
+
+                            Large<input type="radio" id="large" value="large" name="pizza size">
+                            <br>
+                        </div>
+                        <div class="checkbox">
+                            <label for="toppings">Toppings:</label>
+                            <br>
+                            <label for="chicken">Chicken</label>
+                            <input type="checkbox" id="chicken">
+                            <br>
+                            <label for="pineapple">Pineapple</label>
+                            <input type="checkbox" id="pineapple">
+                            <br>
+                            <label for="pepperoni">Pepperoni</label>
+                            <input type="checkbox" id="pepperoni">
+                            <br>
+                            <label for="mushrooms">Mushrooms</label>
+                            <input type="checkbox" id="mushrooms">
+                            <br>
+                            <label for="beef">Beef</label>
+                            <input type="checkbox" id="beef">
+                            <br>
+                            <label for="sausage">Sausage</label>
+                            <input type="checkbox" id="sausage">
+                            <br>
+                            <label for="onion">Onion</label>
+                            <input type="checkbox" id="onion">
+                            <br>
+                            <label for="black olives">Blacks Olives</label>
+                            <input type="checkbox" id="black olives">
+                            <br>
+                            <label for="green pepper">Green Pepper</label>
+                            <input type="checkbox" id="green pepper">
+                            <br>
+                            <label for="fresh garlic">Fresh Garlic</label>
+                            <input type="checkbox" id="fresh garlic">
+                            <br>
+                            <label id="messageLabel"></label>
+                        </div>
+                        <label for="service-method">Service method</label>
+                        <select id="service-method">
+                            <option value="null"></option>
+                            <option value="delivery">Delivery</option>
+                            <option value="pick-up" hidden="hidden">Pick-up</option>
+                        </select><br>
+                        <label for="address">Enter address(for delivery option):</label>
+                        <input type="address" id="address" placeholder="Enter your Address" required>
+                        <br>
+                        <input type="reset">
+                        <input type="submit" id="btn1" value="Sumbit">
+
+                        <!--<p class="output"></p>-->
+                        <!--<p id="result"></p>-->
+                    </fieldset>
+                </form>
+                <!-- script for getting the value/data the user entered -->
+                <script>
+                    const form = document.getElementById('form');
+                    const txt1 =document.getElementById('name');
+                    const txt2 =document.getElementById('last-name');
+                    const txt3 =document.getElementById('telphone');
+                    const txt4 =document.getElementById('email');
+                    const txt5 =document.getElementById('quantity');
+                    const txt6 =document.getElementById('service-method');
+                    const txt7 =document.getElementById('address');
+
+                    form.addEventListener('submit', function (e){
+                        e.preventDefault();
+
+                        const txt1Value = txt1.value;
+                        const txt2Value = txt2.value;
+                        const txt3Value = txt3.value;
+                        const txt4Value = txt4.value;
+                        const txt5Value = txt5.value;
+                        const txt6Value = txt6.value;
+                        const txt7Value = txt7.value;
+
+                        localStorage.setItem('first-name', txt1Value);
+                        localStorage.setItem('last-name', txt2Value);
+                        localStorage.setItem('telephone', txt3Value);
+                        localStorage.setItem('email', txt4Value);
+                        localStorage.setItem('quantity', txt5Value);
+                        localStorage.setItem('service-method', txt6Value);
+                        localStorage.setItem('address', txt7Value);
+
+                        window.location.href="checkout.html";
+
+                    })
+                </script>
+            </div>
+        </section>
+    </main>
+</div>
+<footer>
+    <div>
+        <a href="index.html"><img src="./img/logo_1.jpg" alt="footer logo"></a>
+    </div>
+    <div>
+        <nav>
+            <menu>
+                <li><a href="about.html"><h6>ABOUT US</h6></a></li>
+                <li><a href="html_file.html"><h6>PRIVACY</h6></a></li>
+                <li><a href="html_file.html"><h6>EMAIL OFFERS</h6></a></li>
+                <li><a href="html_file.html"><h6>CONTACT US</h6></a></li>
+                <li><a href="html_file.html"><h6>JOIN OUR TEAM</h6></a></li>
+                <li><a href="html_file.html"><h6>TERMS AND CONDITION</h6></a></li>
+                <li><a href="html_file.html"><h6>GET ANSWERS</h6></a></li>
+            </menu>
+        </nav>
+    </div>
+    <div>
+        <form method="post" action="index.html" enctype="multipart/form-data">
+            <textarea placeholder="Ask Questions" rows="3" cols="25"></textarea>
+            <br>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</footer>
+</body>
+</html>

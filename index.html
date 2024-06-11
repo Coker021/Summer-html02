@@ -1,13 +1,177 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utt-8">
-    <title>Week 1 | Lab 1 | Core HTML elements</title>
+    <!-- add our meta data -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="this is the code for our week 1 class">
+    <meta name="description" content="Creating a website for ordering pizza">
     <meta name="robots" content="noindex, nofollow">
+    <title>Assignment 2| Pizza shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300
+    ;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,
+    900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,
+    700;1,900&display=swap" rel="stylesheet">
+    <!-- add our CSS -->
+    <link rel="stylesheet" href="./CSS/style_assignment.css">
+
 </head>
 <body>
-<h1>Hello World</h1>
+<header>
+    <!-- add our company logo, I designed this one myself🙃 -->
+    <div>
+        <a href="index.html"><img src="./img/logo_1.jpg" alt="header logo"></a>
+    </div>
+    <nav>
+        <menu>
+            <li><a href="html_file.html">ORDER ONLINE</a></li>
+            <li><a href="index.html">MENU</a></li>
+            <li><a href="html_file.html">COUPONS</a></li>
+            <li><a href="html_file.html">DELIVERIES IN BARRIE</a></li>
+            <li><a href="html_file.html">CHANGE LANGUAGE</a></li>
+            <li><a href="html_file.html">SIGN-IN & EARN REWARDS</a></li>
+        </menu>
+    </nav>
+</header>
+<section class="masthead">
+    <h1>PIZZA HOUSE🍕</h1>
+</section>
+<!-- for this assignment, I used a flexbox for my webpage, I tried using both flex and grid, but I was getting errors -->
+<div class="flex-conent-container">
+<main>
+    <section>
+        <h3>OUR MENUS</h3>
+        <!-- add our section(I used 3 sections) -->
+    </section>
+    <section>
+        <div>
+            <img src="./img/Pizza_1.jpg" alt="Pizza">
+            <a href="index_1.html">
+                <button class="btn">Order Now!</button></a>
+            <p>$10.50</p>
+
+        </div>
+        <div>
+            <img src="./img/Pizza_2.jpg" alt="Pizza">
+            <a href="index_1.html">
+                <button class="btn">Order Now!</button></a>
+            <p>$12.50</p>
+
+        </div>
+        <div>
+            <img src="./img/Pizza_3.jpg" alt="Pizza">
+            <a href="index_1.html">
+                <button class="btn">Order Now!</button></a>
+            <p>$13.99</p>
+        </div>
+        <div>
+            <img src="./img/Pizza_4.jpg" alt="Pizza">
+            <a href="index_1.html">
+                <button class="btn">Order Now!</button></a>
+            <p>$14.50</p>
+        </div>
+    </section>
+    <section>
+        <div>
+            <img src="./img/Pizza_5.jpg" alt="Pizza">
+            <a href="index_1.html">
+                <button class="btn">Order Now!</button></a>
+            <p>$17.99</p>
+        </div>
+        <div>
+            <img src="./img/Pizza_6.jpg" alt="Pizza">
+            <a href="index_1.html">
+                <button class="btn">Order Now!</button></a>
+            <p>$11.50</p>
+        </div>
+        <div>
+            <img src="./img/Pizza_8.jpg" alt="Pizza">
+            <a href="index_1.html">
+                <button class="btn">Order Now!</button></a>
+            <p>$10.00</p>
+        </div>
+        <div>
+            <img src="./img/Pizza_10.jpg" alt="Pizza">
+            <a href="index_1.html">
+                <button class="btn">Order Now!</button></a>
+            <p>$18.07</p>
+        </div>
+    </section>
+    <section>
+        <div>
+            <img src="./img/Pizza_11.jpg" alt="Pizza">
+            <a href="index_1.html">
+                <button class="btn">Order Now!</button></a>
+            <p>$11.99</p>
+        </div>
+        <div>
+            <img src="./img/Pizza_12.jpg" alt="Pizza">
+            <a href="index_1.html">
+                <button class="btn">Order Now!</button></a>
+            <p>$18.90</p>
+        </div>
+        <div>
+            <img src="./img/Pizza_13.jpg" alt="Pizza">
+            <a href="index_1.html">
+                <button class="btn">Order Now!</button></a>
+            <p>$13.66</p>
+        </div>
+        <div>
+            <img src="./img/Pizza_14.jpg" alt="Pizza">
+            <a href="index_1.html">
+                <button class="btn">Order Now!</button></a>
+            <p>$15.99</p>
+        </div>
+    </section>
+</main>
+    <!-- add our aside -->
+<aside>
+    <article>
+        <figure>
+            <img src="./img/Pizza_7.jpg" alt="Pizza">
+            <a href="index_1.html">
+                <button class="btn">Order Now!</button></a>
+            <figcaption>Order now for $29.99</figcaption>
+        </figure>
+        <article>
+            <figure class="me">
+                <img src="./img/Pizza_9.jpg" alt="Pizza">
+                <a href="index_1.html">
+                    <button class="btn">Order Now!</button></a>
+                <figcaption>Order now for $35.99</figcaption>
+            </figure>
+        </article>
+    </article>
+</aside>
+</div>
+<!-- here I used a p to give spacing between the aside and footer -->
+<p></p>
+<footer>
+    <div>
+        <a href="index.html"><img src="./img/logo_1.jpg" alt="footer logo"></a>
+    </div>
+    <div>
+        <!-- yes I put a nav in the footer, pretty dope. I didn't know how to put it vertically tho like how it is in most webpage -->
+        <nav>
+            <menu>
+                <li><a href="about.html"><h6>ABOUT US</h6></a></li>
+                <li><a href="html_file.html"><h6>PRIVACY</h6></a></li>
+                <li><a href="html_file.html"><h6>EMAIL OFFERS</h6></a></li>
+                <li><a href="html_file.html"><h6>CONTACT US</h6></a></li>
+                <li><a href="html_file.html"><h6>JOIN OUR TEAM</h6></a></li>
+                <li><a href="html_file.html"><h6>TERMS AND CONDITION</h6></a></li>
+                <li><a href="html_file.html"><h6>GET ANSWERS</h6></a></li>
+            </menu>
+        </nav>
+    </div>
+    <div>
+        <form method="post" action="index.html" enctype="multipart/form-data">
+            <textarea placeholder="Ask Questions" rows="3" cols="25"></textarea>
+            <br>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</footer>
 </body>
 </html>
